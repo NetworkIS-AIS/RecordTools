@@ -20,6 +20,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col justify-between text-gray-800">
 
+<!-- 1. หน้าล็อกอินพนักงาน -->
   <div id="loginPage" class="flex-grow flex flex-col justify-center items-center px-4">
     <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-sm border border-gray-100">
       <div class="text-center mb-5">
@@ -28,22 +29,24 @@
         <p class="text-base text-gray-500 mt-0.5">กรุณากรอกรหัสพนักงานของคุณ</p>
       </div>
       <div class="mb-4">
-        <input type="text" id="empIdInput" placeholder="รหัสพนักงาน" class="w-full px-4 py-3.5 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500 text-center text-xl font-bold">
+        <input type="text" id="empIdInput" placeholder="รหัสพนักงาน (เช่น EMP001)" class="w-full px-4 py-3.5 border-2 border-blue-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500 text-center text-xl font-bold">
       </div>
-      <button onclick="login()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition duration-200 text-lg">
+      <button onclick="login()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition duration-200 text-lg mb-5">
         <i class="fa-solid fa-right-to-bracket mr-2"></i> เข้าสู่ระบบ
       </button>
-    </div>
-    <div class="mt-1 p-3.5 bg-yellow-50 rounded-xl border border-yellow-200 shadow-sm">
-          <span class="block text-xs font-bold text-yellow-700 mb-1.5 uppercase tracking-wide">
-            <i class="fa-solid fa-bullhorn text-yellow-500 mr-1.5 text-sm animate-bounce"></i> ประชาสัมพันธ์ / แจ้งข่าวสาร:
-          </span>
-          <div class="text-xs text-gray-600 space-y-1 leading-relaxed">
-            <p>• ระบบนี้พัฒนาขึ้นเพื่อความสะดวกในการบันทึกข้อมูล การตรวจนับอุปกรณ์และทำรายงาน <span class="text-red-600 font-bold bg-red-50 px-1 rounded">ไม่ใช่ระบบของบริษัท</span></p>
-            <p>• หากพบปัญหาการใช้งาน กรุณาติดต่อผู้พัฒนาแอป</p>
-          </div>
+
+      <!-- 📰 กล่องแจ้งข่าวสาร/ประชาสัมพันธ์ (ย้ายมาไว้หน้าล็อกอินเรียบร้อย) -->
+      <div class="p-3.5 bg-yellow-50 rounded-xl border border-yellow-200 shadow-sm">
+        <span class="block text-xs font-bold text-yellow-700 mb-1.5 uppercase tracking-wide">
+          <i class="fa-solid fa-bullhorn text-yellow-500 mr-1.5 text-sm animate-bounce"></i> ประชาสัมพันธ์ / แจ้งข่าวสาร:
+        </span>
+        <div class="text-xs text-gray-600 space-y-1 leading-relaxed">
+          <p>• ระบบนี้พัฒนาขึ้นเพื่อความสะดวกในการบันทึกข้อมูล การตรวจนับอุปกรณ์และทำรายงาน <span class="text-red-600 font-bold bg-red-50 px-1 rounded">ไม่ใช่ระบบของบริษัท</span></p>
+          <p>• หากพบปัญหาการใช้งาน กรุณาติดต่อผู้พัฒนาแอป</p>
         </div>
       </div>
+
+    </div>
   </div>
 
   <div id="mainPage" class="hidden flex-grow flex flex-col">
