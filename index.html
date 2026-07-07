@@ -171,10 +171,15 @@
     let currentUser = { empId: '', empName: '' };
     let progressInterval = null;
 
-    // ฟังก์ชันสื่อสารข้ามเซิร์ฟเวอร์แบบผ่าน Fetch API
+// ฟังก์ชันสื่อสารข้ามเซิร์ฟเวอร์แบบผ่าน Fetch API (เวอร์ชันปลดล็อกคำสั่งย้ายเส้นทาง)
     async function callBackend(payload) {
       const response = await fetch(BACKEND_URL, {
         method: "POST",
+        mode: "cors", // บังคับโหมดเปิดสิทธิ์ข้ามโดเมน
+        redirect: "follow", // 🌟 บรรทัดนี้สำคัญที่สุด บังคับให้เดินตามระบบ Redirect ของ Google
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8" // ตั้งเป็น text/plain เพื่อเลี่ยงการติด Preflight CORS
+        },
         body: JSON.stringify(payload)
       });
       return await response.json();
